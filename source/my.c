@@ -33,12 +33,12 @@ void mysplitpath(const char *path, char *drv, char *dir, char *name,
   const char *p;   /* search pointer */
   const char *s;   /* copy pointer */
 
-  /* extract "sdmmc:" */
-  if (path[0] && path[5] == ':') {
+  /* extract "sdmc:" */
+  if (path[0] && path[4] == ':') {
     if (drv) {
-      memcpy(drv, path, 6);
-      drv[6] = '\0';
-      path += 6;
+      memcpy(drv, path, 5);
+      drv[5] = '\0';
+      path += 5;
     }
   } else if (drv)
     *drv = '\0';
